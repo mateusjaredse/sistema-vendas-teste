@@ -1,2 +1,0 @@
-# sistema-vendas-teste
-TESTE
