@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/mateu/Downloads/dashboard_preview_hoje_turnos.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard — Painel Geral</title>
+<link href="../../assets/fonts/css2" rel="stylesheet">
+
+
+<link rel="stylesheet" href="painel-geral.css?v=font-readable-1366-20260624">
+
+<style>
+.hs-month-wide {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; 
+}
+
+.hs-month-wide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  
+  /* ATUALIZADO: Cor alterada para o equivalente RGB de #232f46 (35, 47, 70)
+     O miolo plano de 20% (0.2) e as pontas com sumiço gradual foram mantidos */
+  background: linear-gradient(
+    90deg, 
+    rgba(70, 35, 35, 0) 0%, 
+    rgba(35, 47, 70, 0.2) 25%, 
+    rgba(35, 47, 70, 0.2) 75%, 
+    rgba(35, 47, 70, 0) 100%
+  );
+  
+  transform: skewX(-20deg);
+  animation: shine-slide 4.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes shine-slide {
+  0% { left: -160%; }
+  100% { left: 160%; }
+}
+</style>
+
+</head>
+<body>
+<div class="app">
+
+<!-- MAIN -->
+<div class="main">
+  <div class="pg-header" style="margin-top: -20px;">
+    <h1 style="visibility: hidden; margin: 0; height: 71px;">&nbsp;</h1>
+    <p style="visibility: hidden; margin: 0; height: 0;">&nbsp;</p>
+  </div>
+
+  <!-- LAYOUT PRINCIPAL: esquerda (hero+metas+progresso) / direita (tabela) -->
+  <div class="main-grid">
+
+    <!-- COLUNA ESQUERDA -->
+    <div class="left-col">
+
+      <!-- HERO BANNER -->
+      <div class="top-cards">
+        <div class="hero">
+          <!-- MÊS -->
+          <div class="hs-month-wide">
+            <div class="hs-fat-mes-nome">MAIO</div>
+            <div class="hs-fat-mes-ano">2026</div>
+          </div>
+          <div class="hero-scan-slot" data-slot="0"></div>
+          <div class="hero-scan-slot" data-slot="1"></div>
+          <div class="hero-scan-slot" data-slot="2"></div>
+          <div id="hero-card-templates" class="hero-card-template">
+            <div data-card-id="resumo" class="hero-bottom-cell hero-summary-card">
+              <div class="hs-lbl blue2"><div class="hs-dot dot-blue"></div>Resumo</div>
+              <div class="hero-static-list">
+                <div class="hero-static-row"><span class="hero-static-num">0</span><span class="hero-static-text">Registros</span></div>
+                <div class="hero-static-row"><span class="hero-static-num">0</span><span class="hero-static-text">Notas Fiscais</span></div>
+                <div class="hero-static-row"><span class="hero-static-num">0</span><span class="hero-static-text">Clientes</span></div>
+              </div>
+            </div>
+            <div data-card-id="oferta" class="hero-bottom-cell" style="padding:10px 24px;display:flex;flex-direction:column;justify-content:flex-start;">
+              <div class="hero-offer-title" style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text);display:flex;align-items:center;gap:5px;margin-bottom:8px;">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>Oferta Ativa
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <svg width="72" height="72" viewBox="0 0 72 72" style="flex-shrink:0">
+                  <circle cx="36" cy="36" r="22" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="9"/>
+                  <circle cx="36" cy="36" r="22" fill="none" stroke="#3b82f6" stroke-width="9" stroke-linecap="butt" stroke-dasharray="0 138.23" stroke-dashoffset="0" transform="rotate(-90 36 36)"/>
+                  <circle cx="36" cy="36" r="22" fill="none" stroke="#10b981" stroke-width="9" stroke-linecap="butt" stroke-dasharray="0 138.23" stroke-dashoffset="0" transform="rotate(-90 36 36)"/>
+                  <text x="36" y="33" text-anchor="middle" font-family="DM Sans" font-size="6" fill="#8892a4">TOTAL</text>
+                  <text x="36" y="43" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="800" fill="#f8fafc">0</text>
+                </svg>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                  <div style="display:flex;flex-direction:column;gap:1px;"><div style="display:flex;align-items:baseline;gap:4px;"><span style="font-family:var(--mono);font-size:16px;font-weight:800;line-height:1;color:#10b981;">0</span><span style="font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:var(--text2);white-space:nowrap;">Sim</span><span style="font-family:var(--mono);font-size:9px;font-weight:700;color:#10b981;margin-left:2px;">0%</span></div><span style="font-family:var(--mono);font-size:9px;color:var(--text2);">R$ 0,00</span></div>
+                  <div style="height:1px;background:rgba(255,255,255,.07);"></div>
+                  <div style="display:flex;flex-direction:column;gap:1px;"><div style="display:flex;align-items:baseline;gap:4px;"><span style="font-family:var(--mono);font-size:16px;font-weight:800;line-height:1;color:#3b82f6;">0</span><span style="font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:var(--text2);white-space:nowrap;">Não</span><span style="font-family:var(--mono);font-size:9px;font-weight:700;color:#3b82f6;margin-left:2px;">0%</span></div><span style="font-family:var(--mono);font-size:9px;color:var(--text2);">R$ 0,00</span></div>
+                </div>
+              </div>
+            </div>
+            <div data-card-id="ticket" class="hero-bottom-cell hero-ticket-card">
+              <div class="hs-lbl blue2"><div class="hs-dot dot-blue"></div>Ticket Médio</div>
+              <div class="hero-ticket-values">
+                <div class="hero-ticket-stat"><div class="hero-ticket-value-row"><span class="hero-ticket-lbl">Mês</span><span class="hero-ticket-val">R$ 0,00</span><span class="hero-ticket-trend up">0,0%</span></div></div>
+                <div class="hero-ticket-stat"><div class="hero-ticket-value-row"><span class="hero-ticket-lbl">Dia</span><span class="hero-ticket-val">R$ 0,00</span><span class="hero-ticket-trend down">0,0%</span></div></div>
+              </div>
+            </div>
+            <div data-card-id="status-clientes" class="hero-bottom-cell hero-days-compact">
+              <div class="hs-lbl blue2"><div class="hs-dot dot-blue"></div>Status de Clientes</div>
+              <div class="hero-days-values">
+                <div class="hero-day-stat"><div class="hf-lbl">Ativos</div><div class="hf-val big blue">0</div></div>
+                <div class="hero-day-stat"><div class="hf-lbl">Inativos</div><div class="hf-val big blue">0</div></div>
+              </div>
+            </div>
+            <div data-card-id="dias" class="hero-bottom-cell hero-days-compact">
+              <div class="hs-lbl blue2"><div class="hs-dot dot-blue"></div>Dias Úteis</div>
+              <div class="hero-days-values">
+                <div class="hero-day-stat"><div class="hf-lbl">No Mês</div><div class="hf-val big blue">0</div></div>
+                <div class="hero-day-stat"><div class="hf-lbl">Restantes</div><div class="hf-val big blue">0</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HOJE -->
+        <div class="today-card">
+          <!-- Coluna esquerda: infos -->
+          <div class="hs green hs-hoje">
+            <div class="hs-lbl green"><div class="hs-dot dot-green"></div>Hoje ·</div>
+            <div class="hf"><div class="hf-lbl">Faturamento</div><div class="hf-val big green">R$ 0,00</div></div>
+            <div class="hf">
+              <div class="hf-lbl">Meta Fictícia</div>
+              <div class="hf-val red">-R$ 0,00</div>
+              <div class="falta-real-wrap">
+                <div class="falta-real-lbl">Meta Real</div>
+                <div class="falta-real-val">-R$ 0,00</div>
+              </div>
+            </div>
+          </div>
+          <!-- Coluna direita: turnos deslizam no hover -->
+          <div class="turno-panel">
+            <div class="turno-bloco">
+              <div class="turno-bloco-header">
+                <span class="turno-badge mat"><span class="turno-icon mat"></span>Matutino</span>
+                <span class="turno-hora">8:00 – 11:30</span>
+              </div>
+              <div class="turno-val" id="turno-mat-val">R$ 0,00</div>
+              <div class="turno-bar-bg"><div class="turno-bar-fill mat" id="turno-mat-bar" style="width:0%"></div></div>
+              <div class="turno-pct" id="turno-mat-pct">0,0% do dia</div>
+            </div>
+            <div class="turno-bloco">
+              <div class="turno-bloco-header">
+                <span class="turno-badge vesp"><span class="turno-icon vesp"></span>Vespertino</span>
+                <span class="turno-hora">13:30 – 18:00</span>
+              </div>
+              <div class="turno-val" id="turno-vesp-val">R$ 0,00</div>
+              <div class="turno-bar-bg"><div class="turno-bar-fill vesp" id="turno-vesp-bar" style="width:0%"></div></div>
+              <div class="turno-pct" id="turno-vesp-pct">0,0% da tarde</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progresso -->
+      <div class="prog-card meta-progress-card">
+        <div class="prog-header">
+          <div class="prog-title">PROGRESSO DA META</div>
+          <div class="prog-pct" id="prog-pct-val">0,00%</div>
+        </div>
+        <div>
+          <div class="prog-labels-row">
+            <div class="pl-fat" id="prog-fat-val">R$ 0,00</div>
+            <div class="pl-meta" id="prog-meta-lbl">Meta: R$ 0,00</div>
+          </div>
+          <div class="prog-bar-bg">
+            <div class="prog-bar-fill is-empty" id="prog-bar-fill" style="width: 0%;"></div>
+            <div class="prog-meta-line" id="prog-meta-line" style="left: 0%;"></div>
+          </div>
+          <div class="prog-subs">
+            <span class="pl-resta">Resta: <b id="prog-resta">R$ 0,00</b></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- METAS + ESTATÍSTICAS lado a lado -->
+      <div class="metas-stats-row">
+
+        <!-- Card Metas -->
+        <div class="metas-square">
+          <div class="metas-square-title">PER&Iacute;ODO DE INATIVIDADE</div>
+          <div class="meta-client-tabs" id="meta-client-tabs" aria-label="Clientes sem comprar">
+            <button class="active" type="button" data-meta-range="tres-dias">3 DIAS</button>
+            <button type="button" data-meta-range="quinzena">QUINZENA</button>
+            <button type="button" data-meta-range="um-mes">1 M&Ecirc;S</button>
+            <button type="button" data-meta-range="tres-meses">3 MESES</button>
+            <button type="button" data-meta-range="ilimitado">ILIMITADO</button>
+          </div>
+          <div class="meta-client-panel">
+            <div class="meta-client-table-wrap">
+              <table class="meta-client-table" aria-label="Clientes sem comprar">
+                <colgroup id="meta-client-cols"></colgroup>
+                <thead id="meta-client-head"></thead>
+                <tbody id="meta-client-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ritmo de Atingimento -->
+        <div class="prog-card estatisticas-card" style="gap:0;padding:18px 18px 16px;position:relative;overflow:hidden;border-radius:12px;min-height:0;height:100%;">
+          
+
+          <div class="ra-label">Ritmo de Atingimento</div>
+
+          <div class="ra-tabs">
+            <div class="ra-tab active" onclick="raSwitchTab(this,'dia')">Dia</div>
+            <div class="ra-tab" onclick="raSwitchTab(this,'semana')">Semana</div>
+            <div class="ra-tab" onclick="raSwitchTab(this,'quinzena')">Quinzena</div>
+            <div class="ra-tab" onclick="raSwitchTab(this,'mes')">Mês</div>
+          </div>
+
+          <div class="ra-big-val"><span class="ra-prefix" id="ra-prefix" style="color:#4c92f8">R$</span><span class="ra-num" id="ra-val-num" style="color:#4c92f8">0,00</span></div>
+          <div class="ra-meta-line" id="ra-meta-line">Previsão do dia · projeção <b id="ra-proj-val" style="color:#8892a4">R$ 0,00</b></div>
+
+          <div class="ra-progress-wrap">
+            <div class="ra-meta-row"><span class="ra-meta-lbl" id="ra-meta-label">Meta R$ 0,00</span></div>
+            <div class="ra-progress-bar">
+              <div class="ra-progress-fill ra-fill-blue is-empty" id="ra-prog-fill" style="width:0%"></div>
+            </div>
+            <div class="ra-prog-labels">
+              <span class="ra-prog-pct ra-pct-blue" id="ra-prog-pct">0% previsto</span>
+              <span class="ra-prog-surplus" id="ra-prog-surplus">R$ 0,00</span>
+            </div>
+          </div>
+
+          <div class="ra-divider"></div>
+
+          <div class="ra-tl-header">Dias úteis — Maio</div>
+          <div class="ra-tl-dots" id="ra-tl-dots"></div>
+
+          
+        </div>
+
+      </div>
+
+    </div><!-- /coluna esq -->
+
+    <!-- COLUNA DIREITA: TABELA RELATÓRIO (altura total) -->
+    <div class="tbl-card">
+      <div class="tbl-hdr"><div class="tbl-hdr-dot"></div>Relatório de Cumprimento</div>
+      <div class="tbl-body-scroll"><div id="tbl-body"></div></div>
+    </div>
+
+  </div><!-- /main-grid -->
+</div><!-- /main -->
+</div><!-- /app -->
+
+<!-- POPOVER -->
+<div class="pop-overlay" id="pop-overlay" onclick="fecharPop(event)">
+  <div class="pop-box" id="pop-box">
+    <div class="pop-title">
+      <span id="pop-title-txt">Faturamentos</span>
+      <button class="pop-close" onclick="fecharPop()">X</button>
+    </div>
+    <div class="pop-table-scroll">
+      <table class="pop-table">
+        <thead>
+          <tr>
+            <th>NFE</th>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th style="text-align:right">Qtd</th>
+            <th style="text-align:right">Preço Unit.</th>
+            <th style="text-align:right">Total</th>
+            <th>Oferta</th>
+          </tr>
+        </thead>
+        <tbody id="pop-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="../../app/js/supabase-dashboard.js?v=data-brasilia-font-1366-20260624"></script>
+<script src="painel-geral.js?v=data-brasilia-font-1366-20260624"></script>
+</body></html>
